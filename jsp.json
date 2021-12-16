@@ -16,12 +16,12 @@
 	"JSP FILE SNIPPET": {
 		"prefix": ["jsp", "<%@"],
 		"body": [
-			"<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>",
-			"<%@ taglib prefix='x' uri='http://java.sun.com/jsp/jstl/xml' %>",
-			"<%@ taglib prefix='fmt' uri='http://java.sun.com/jsp/jstl/fmt' %>",
-			"<%@ taglib prefix='sql' uri='http://java.sun.com/jsp/jstl/sql' %>",
-			"<%@ taglib prefix='fn' uri='http://java.sun.com/jsp/jstl/functions' %>",
-			"<%@ page language='java' contentType='text/html; charset=UTF-8' pageEncoding='UTF-8'%>",
+			"<%@ taglib prefix=\"c\" uri=\"http://java.sun.com/jsp/jstl/core\" %>",
+			"<%@ taglib prefix=\"x\" uri=\"http://java.sun.com/jsp/jstl/xml\" %>",
+			"<%@ taglib prefix=\"fmt\" uri=\"http://java.sun.com/jsp/jstl/fmt\" %>",
+			"<%@ taglib prefix=\"sql\" uri=\"http://java.sun.com/jsp/jstl/sql\" %>",
+			"<%@ taglib prefix=\"fn\" uri=\"http://java.sun.com/jsp/jstl/functions\" %>",
+			"<%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\"%>",
 			"",
 			"<!DOCTYPE html>",
 			"<html>",
@@ -43,8 +43,116 @@
 	"JSTL if": {
 		"prefix": "if",
 		"body": [
+			"<c:if test=\"\">",
 			"",
+			"</c:if>"
 		],
-		"description": "Log output to console"
-	}
+		"description": "if in jstl"
+	},
+	"JSTL choose": {
+		"prefix": "choose",
+		"body": [
+			"<c:choose>",
+    			"<c:when test=\"\"></c:when>",
+    			"<c:otherwise></c:when>",
+			"</c:choose>",
+		],
+		"description": "choose in jstl"
+	},
+	"JSTL forEach": {
+		"prefix": ["foreach","forEach"],
+		"body": [
+			"<c:forEach var=\"item\" items=\"\">",
+			"${item}",
+			"</c:forEach>"
+		],
+		"description": "forEach in jstl"
+	},
+	"JSTL for": {
+		"prefix": "for",
+		"body": [
+			"<c:forEach var=\"no\" begin=\"00\" end=\"10\">",
+			"${no}",
+			"</c:forEach>"
+		],
+		"description": "for in jstl"
+	},
+	"JSTL forTakens": {
+		"prefix": ["forTakens", "fortakens"],
+		"body": [
+			"<c:forTakens var=\"word\" items=\"  \" delims=\"AND\">",
+			"${word}",
+			"</c:forTakens>"
+		],
+		"description": "forTakens in jstl : items={'a,b,c'} & delims={','} -> {'a','b','c'}"
+	},
+	"JSTL url": {
+		"prefix": "url",
+		"body": [
+			"<c:url var=\"\" value=\"\">",
+			"\t<c:param name=\"\" value=\"\" />",
+			"</c:url>"
+		],
+		"description": "url in jstl"
+	},
+	"JSTL import": {
+		"prefix": "import",
+		"body": [
+			"<c:import url=\"\" />"
+		],
+		"description": "import in jstl"
+	},
+	"JSTL out": {
+		"prefix": "out",
+		"body": [
+			"<c:out value=\"\" default=\"\" />"
+		],
+		"description": "out in jstl"
+	},
+	"JSTL set": {
+		"prefix": "set",
+		"body": [
+			"<c:set var=\"\" scope=\"page|request|session|application\">",
+			"",
+			"</c:set>"
+		],
+		"description": "set in jstl : scope에 따라 변수의 생존 범위가 결정됨. 생략 시, JspContext에 저장"
+	},
+	"JSTL set target": {
+		"prefix": ["set target", "settarget"],
+		"body": [
+			"<c:set target=\"\" property=\"\" value=\"\" />"
+		],
+		"description": "set target in jstl : result -> (${target.property} == value)"
+	},
+	"JSTL remove": {
+		"prefix": "remove",
+		"body": [
+			"<c:remove var=\"\" scope=\"page|request|session|application\" />"
+		],
+		"description": "remove in jstl : remove var made by 'set'"
+	},
+	"JSTL redirect": {
+		"prefix": "redirect",
+		"body": [
+			"<c:redirect url=\"\" />"
+		],
+		"description": "redirect in jstl"
+	},
+
+
+	"JSTL fmt:parseDate": {
+		"prefix": "fmt:parseDate",
+		"body": [
+			"<fmt:parseDate var=\"\" value=\"2020-02-15\" pattern=\"yyyy-MM-dd\" />"
+		],
+		"description": "fmt:parseDate in jstl"
+	},
+	"JSTL fmt:formatDate": {
+		"prefix": "fmt:formatDate",
+		"body": [
+			"<fmt:formatDate value=\"${varDate}\" pattern=\"yyyy-MM-dd\" />"
+		],
+		"description": "fmt:formatDate in jstl : 날짜 객체만 다룸"
+	},
 }
