@@ -44,7 +44,7 @@
 		"prefix": "if",
 		"body": [
 			"<c:if test=\"\">",
-			"",
+			"\t",
 			"</c:if>"
 		],
 		"description": "if in jstl"
@@ -53,8 +53,8 @@
 		"prefix": "choose",
 		"body": [
 			"<c:choose>",
-    			"<c:when test=\"\"></c:when>",
-    			"<c:otherwise></c:when>",
+    			"\t<c:when test=\"\"></c:when>",
+    			"\t<c:otherwise></c:when>",
 			"</c:choose>",
 		],
 		"description": "choose in jstl"
@@ -63,7 +63,7 @@
 		"prefix": ["foreach","forEach"],
 		"body": [
 			"<c:forEach var=\"item\" items=\"\">",
-			"${item}",
+			"\t",
 			"</c:forEach>"
 		],
 		"description": "forEach in jstl"
@@ -72,7 +72,7 @@
 		"prefix": "for",
 		"body": [
 			"<c:forEach var=\"no\" begin=\"00\" end=\"10\">",
-			"${no}",
+			"\t",
 			"</c:forEach>"
 		],
 		"description": "for in jstl"
@@ -81,7 +81,7 @@
 		"prefix": ["forTakens", "fortakens"],
 		"body": [
 			"<c:forTakens var=\"word\" items=\"  \" delims=\"AND\">",
-			"${word}",
+			"\t",
 			"</c:forTakens>"
 		],
 		"description": "forTakens in jstl : items={'a,b,c'} & delims={','} -> {'a','b','c'}"
@@ -113,7 +113,7 @@
 		"prefix": "set",
 		"body": [
 			"<c:set var=\"\" scope=\"page|request|session|application\">",
-			"",
+			"\t",
 			"</c:set>"
 		],
 		"description": "set in jstl : scope에 따라 변수의 생존 범위가 결정됨. 생략 시, JspContext에 저장"
