@@ -40,6 +40,23 @@
 		],
 		"description": "My Jsp Snippet"
 	},
+
+	"isNull": {
+		"prefix": ["empty", "isNull"],
+		"body": [
+			"empty"
+		],
+		"description": "${empty Object}"
+	},
+
+	"pageContext.request.contextPath": {
+		"prefix": ["pageContext.request.contextPath"],
+		"body": [
+			"pageContext.request.contextPath"
+		],
+		"description": "index.jsp를 호출하는 기본 경로"
+	},
+
 	"JSTL if": {
 		"prefix": "if",
 		"body": [
@@ -105,7 +122,7 @@
 	"JSTL out": {
 		"prefix": "out",
 		"body": [
-			"<c:out value=\"\" default=\"\" />"
+			"<c:out value=\"\" default=\"\"/>"
 		],
 		"description": "out in jstl"
 	},
